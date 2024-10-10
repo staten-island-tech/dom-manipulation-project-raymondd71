@@ -6,16 +6,21 @@ const DOMSelectors = {
   from: document.querySelector(".form"),
 };
 
-DOMSelectors.button.addEventListener("click", function (event) {
-  console.log(event.target.parentElement);
-  event.target.parentElement.style.backgroundColor = "red";
-});
+const liItem = DOMSelectors.items;
+const item = Array.from(liItem);
+item.forEach((el) => (el.style.color = "red"));
+
+//DOMSelectors.button.addEventListener("click", function (event) {
+//console.log(event.target.parentElement);
+//event.target.parentElement.style.backgroundColor = "red";
+//});
 
 DOMSelectors.from.addEventListener("submit", function (event) {
   event.preventDefault();
-  console.log(document.querySelector("input").value);
+  DOMSelectors.button.style.backgroundColor = "white";
+  setTimeout(function () {
+    DOMSelectors.button.styke.backgroundColor = "lightgrey";
+  }, 50);
+  let iValue = document.querySelector("#input");
+  console.log(iValue.value);
 });
-
-const item = document.querySelectorAll("li");
-const items = Array.from(item);
-items.forEach((el) => (el.style.color = "red"));
