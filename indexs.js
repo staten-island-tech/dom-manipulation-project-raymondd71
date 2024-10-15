@@ -19,8 +19,11 @@ DOMSelectors.from.addEventListener("submit", function (event) {
   event.preventDefault();
   DOMSelectors.button.style.backgroundColor = "white";
   setTimeout(function () {
-    DOMSelectors.button.styke.backgroundColor = "lightgrey";
+    DOMSelectors.button.style.backgroundColor = "lightgrey";
   }, 50);
-  let iValue = document.querySelector("#input");
-  console.log(iValue.value);
+  const iValue = document.querySelector("#input");
+  DOMSelectors.container.insertAdjacentHTML(
+    "beforeheand",
+    `<div class ="card"><h2 class="card-header">${iValue.value}</h2></div>`
+  );
 });

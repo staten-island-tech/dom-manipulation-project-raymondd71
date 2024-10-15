@@ -3,16 +3,31 @@ html,
 *{
 }
 body{
-    background-color: greenyellow
+    background-color: greenyellow;
+   
 }
 .container{
     display:flex;
     width: 20vw;
-    margin: 2rem auto;
+    margin: 0.5rem auto;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     border: 2rem;
-
 }
+
+.header{
+    display:flex;
+    width: 20vw;
+    margin: 0.5rem auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border: 2rem;
+}
+.card{
+    width: 26%;
+}
+//use the same as felxbox for .card
