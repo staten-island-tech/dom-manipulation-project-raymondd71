@@ -4,7 +4,8 @@ html,
 }
 body{
     background-color: greenyellow;
-   
+    ;
+    text-align: center;
 }
 .container{
     display:flex;
@@ -15,16 +16,10 @@ body{
     align-items: center;
     justify-content: space-around;
     border: 2rem;
-}
+}                               
 .name{
-    display:flex;
-    width: 20vw;
-    margin: 0.5rem auto;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    border: 2rem;
+text-align: center;
+font-size: 50px;
 }
 
 .header{
@@ -50,4 +45,3 @@ body{
     justify-content: space-around;
     background-color: rgba(211,211,211,.5);
 }
-//use the same as felxbox for .card
