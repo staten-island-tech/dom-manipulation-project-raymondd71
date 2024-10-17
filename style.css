@@ -16,6 +16,16 @@ body{
     justify-content: space-around;
     border: 2rem;
 }
+.name{
+    display:flex;
+    width: 20vw;
+    margin: 0.5rem auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border: 2rem;
+}
 
 .header{
     display:flex;
@@ -28,6 +38,16 @@ body{
     border: 2rem;
 }
 .card{
-    width: 26%;
+    height: 50rem;
+    width:21%;
+    min-width: 30rem;
+    border: 2px solid black;
+    border-radius: 25px;
+    display:flex;
+    flex-direction:column; 
+    align-items: center;
+    margin-bottom: 5%;
+    justify-content: space-around;
+    background-color: rgba(211,211,211,.5);
 }
 //use the same as felxbox for .card
