@@ -1,12 +1,23 @@
 const DOMSelectors = {
   header: document.querySelector("h1"),
-  button: document.querySelectorAll(".btn"),
+  button: document.querySelectorAll("#btn"),
   items: document.querySelector("li"),
   cardHeader: document.querySelector(".card-header"),
   form: document.querySelector(".form"),
   container: document.querySelector(".container"),
 };
 
+DOMSelectors.form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const names = document.querySelector("#namee");
+  const dates = document.querySelector("#datee");
+  const notes = document.querySelector("#notee");
+  DOMSelectors.container.insertAdjacentHTML(
+    "beforeend",
+    `<div class="card"><h2>${names}, ${dates}, ${notes}</h2></div>`
+  );
+});
 // const liItem = DOMSelectors.items;
 // const item = Array.form(liItem);
 // item.forEach((el) => (el.style.color = "red"));
