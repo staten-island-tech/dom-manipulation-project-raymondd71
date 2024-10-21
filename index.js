@@ -1,42 +1,45 @@
 const DOMSelectors = {
-  header: document.querySelector("h1"),
-  button: document.querySelectorAll("#btn"),
-  items: document.querySelector("li"),
-  cardHeader: document.querySelector(".card-header"),
-  form: document.querySelector(".form"),
+  button: document.querySelector("#btn"),
+  subject: document.querySelector("#subject"),
+  note: document.querySelector("#note"),
+  date: document.querySelector("#date"),
+  form: document.querySelector("form"),
   container: document.querySelector(".container"),
 };
 
-DOMSelectors.form.addEventListener("submit", function (event) {
-  event.preventDefault();
+id = 1;
+function addCard() {
+  const subjects = DOMSelectors.subject.value;
+  const dates = DOMSelectors.date.value;
+  const notes = DOMSelectors.note.value;
 
-  const names = document.querySelector("#namee");
-  const dates = document.querySelector("#datee");
-  const notes = document.querySelector("#notee");
   DOMSelectors.container.insertAdjacentHTML(
     "beforeend",
-    `<div class="card"><h2>${names}, ${dates}, ${notes}</h2></div>`
+    `<div class= "card" id="card-${id}"> <p>${subjects},${dates},${notes} </p> <button id="remove-${id}">Remove</button> </div>`
   );
-});
-// const liItem = DOMSelectors.items;
-// const item = Array.form(liItem);
-// item.forEach((el) => (el.style.color = "red"));
+  removeCard(id);
+  id += 1;
+}
 
-// //DOMSelectors.button.addEventListener("click", function (event) {
-// //console.log(event.target.parentElement);
-// //event.target.parentElement.style.backgroundColor = "red";
-// //});
+function clear() {
+  DOMSelectors.subject.value = "";
+  DOMSelectors.date.value = "";
+  DOMSelectors.note.value = "";
+}
 
-// DOMSelectors.form.addEventListener("submit", function (event) {
-//   event.preventDefault();
-//   DOMSelectors.button.style.backgroundColor = "white";
-//   setTimeout(function () {
-//     DOMSelectors.button.style.backgroundColor = "lightgrey";
-//   }, 50);
-//   const iValue = document.querySelector("#input");
+function removeCard(id) {
+  const remove = document.querySelector(`#remove-${id}`);
+  remove.addEventListener("click", function () {
+    const card = document.querySelector(`#card-${id}`);
+    card.remove();
+  });
+}
 
-//   DOMSelectors.container.insertAdjacentHTML(
-//     "beforeheand",
-//     `<div class ="card"><h2 class="card-header">${iValue.value}</h2></div>`
-//   );
-// });
+function end() {
+  DOMSelectors.form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    addCard();
+    clear();
+  });
+}
+end();
