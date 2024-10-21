@@ -15,7 +15,7 @@ function addCard() {
 
   DOMSelectors.container.insertAdjacentHTML(
     "beforeend",
-    `<div class= "card" id="card-${id}"> <p>${subjects},${dates},${notes} </p> <button id="remove-${id}">Remove</button> </div>`
+    `<div class= "card" id="card-${id}"> <p>${subjects} ${dates} ${notes} </p> <button id="remove-${id}">Remove</button> </div>`
   );
   removeCard(id);
   id += 1;
